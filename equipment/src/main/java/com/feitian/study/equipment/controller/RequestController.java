@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author : Zhaotianjun
  * @version : 1.0.0
@@ -37,6 +39,15 @@ public class RequestController {
     @GetMapping("/getAllDate")
     public String getAllDate() {
         return "all data";
+    }
+
+    @GetMapping("/getData")
+    public String selectOneData(HttpServletRequest request) {
+        String name = request.getParameter("name");
+        String id = request.getParameter("id");
+        System.out.println("name = " + name);
+        System.out.println("id = " + id);
+        return "success";
     }
 
 }
