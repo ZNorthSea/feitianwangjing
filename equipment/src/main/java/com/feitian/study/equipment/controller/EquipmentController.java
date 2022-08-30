@@ -146,4 +146,6 @@ public class EquipmentController extends ApiController {
         redisTemplate.opsForHash().putAll(key, objectMap);
         redisTemplate.expire(key, 1, TimeUnit.HOURS);
     }
+
+
 }
